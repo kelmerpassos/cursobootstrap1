@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Model</h1>
+        <button type="button" class="btn btn-dark" data-nome="adriel" data-toggle="modal"
+        data-target='#conteudoModal'>Mostrar mensagem para Adriel</button>
+        <button type="button" class="btn btn-primary"  data-nome="vitor" data-toggle="modal"
+        data-target='#conteudoModal'>Ativar mensagem para Vitor</button>
+
+        <div id="conteudoModal" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title"></h1>
+                        <button class="close" data-dismiss="modal" arial-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="mb-4">Descrição</h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <footer>
+        <script src="public/js/jquery.js"></script>
+        <script src="public/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+            $('#conteudoModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var recipient = button.data('nome');
+                var modal = $(this);
+                modal.find('.modal-title').text(recipient.toUpperCase());
+                if (recipient == 'adriel'){
+                    modal.find('.modal-body p').text('Ladrão')
+                } else if (recipient == 'vitor') {
+                    modal.find('.modal-body p').text('Sentador')
+                }
+            });
+        </script>
+    </footer>
+</body>
+</html>

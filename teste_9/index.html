@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Teste 8</title>
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="mb-4 mt-4">Popover</h2>
+            <button type="button" name="button" data-toggle="popover"
+            data-content = "Aqui está meu popoover" class="btn btn-primary"
+            data-placement="bottom" title="Popover">Meu popover</button>
+            <h2 class="mb-4 mt-4">Tooltip</h2>
+            <button type="button" name="button2" data-tagle="tooltip"
+            class="btn btn-primary" data-placement="left" title="Tooltip">
+            Meu tooltip</button>
+        </div>
+    <footer>
+        <script src="public/js/jquery.js"></script>
+        <script src="public/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(function(){
+                $('[data-toggle="popover"]').popover()
+            });
+        </script>
+        <script>
+            $(function(){
+                $('[data-taggle="tooltip"]').tooltip()
+            });
+        </script>
+    </footer>
+    </body>
+</html>
